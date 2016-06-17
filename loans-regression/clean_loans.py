@@ -7,7 +7,7 @@ class CleanLendingClubData:
 	Optionally, can specify which columns should be included in the 
 	dataframe by supplying a list of column names. """
 
-	URL_LOANS_DATA = "https://github.com/Thinkful-Ed/curric-data-001-data-sets/raw/master/loans/loansData.csv"
+	LOANS_URL = "https://github.com/Thinkful-Ed/curric-data-001-data-sets/raw/master/loans/loansData.csv"
 	DEFAULT_COLUMNS = ['Amount.Requested', 'Amount.Funded.By.Investors',
        'Loan.Length', 'Loan.Purpose', 'Debt.To.Income.Ratio', 'State',
        'Home.Ownership', 'Monthly.Income', 'FICO.Range', 'Open.CREDIT.Lines',
@@ -31,11 +31,9 @@ class CleanLendingClubData:
 		first_score = score_range[0]
 		return int(first_score)
 
-	def _get_loan_data(self):
-		return pd.read_csv(self.URL_LOANS_DATA, usecols=self.columns_specified)
-
 	def _make_clean_dataframe(self):
-		loans_df = self._get_loan_data()
+		# Get initial dataframe with specified columns
+		loans_df = pd.read_csv(self.LOANS_URL, usecols=self.columns_specified)
 
 		# Dictionary for matching a column to the function that cleans its data
 		match_columns_to_clean_function = {
