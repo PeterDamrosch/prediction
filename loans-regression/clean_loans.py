@@ -43,7 +43,7 @@ class CleanLendingClubData:
 			'FICO.Range': self._clean_and_split_fico
 		}
 
-		# Check for (and clean) columns that need to be
+		# Check for (and clean) columns in the cleaning dictionary
 		for column in self.columns_specified:
 			if column in match_columns_to_clean_function:
 				clean_function = match_columns_to_clean_function[column]
