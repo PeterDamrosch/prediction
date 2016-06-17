@@ -1,7 +1,6 @@
 import pandas as pd
 
 class CleanLendingClubData:
-
 	""" Returns a dataframe with cleaned Lending Club data.
 
 	Optionally, can specify which columns should be included in the 
