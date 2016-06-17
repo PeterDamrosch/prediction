@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import statsmodels.formula.api as smf
+
 def main():
 	# Set seed for reproducible models
 	np.random.seed(414)
@@ -28,5 +29,6 @@ def main():
 	# Compare residuals
 	linear_fit_residuals = linear_fit.df_resid
 	quadratic_fit_residuals = quadratic_fit.df_resid
-if '__name__' == '__main__':
+
+if __name__ == '__main__':
 	main()
