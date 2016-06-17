@@ -17,6 +17,7 @@ class CleanLendingClubData:
 	def __init__(self, columns_specified=DEFAULT_COLUMNS):
 		self.columns_specified = columns_specified
 
+	# Helper functions for cleaning data
 	def _clean_percentage(self, rate):
 		only_numbers = rate.rstrip('%')
 		float_from_percent = float(only_numbers) / 100
