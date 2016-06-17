@@ -48,7 +48,6 @@ class CleanLendingClubData:
 			if column in match_columns_to_clean_function:
 				clean_function = match_columns_to_clean_function[column]
 				loans_df[column] = loans_df[column].map(clean_function)
-
 		return loans_df
 
 	def run(self):
