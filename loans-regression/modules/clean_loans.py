@@ -1,7 +1,7 @@
 import pandas as pd
 
-class CleanLendingClubData:
-	""" Returns a dataframe with cleaned Lending Club data.
+class GetCleanLoanData:
+	""" Returns a dataframe with cleaned Lending Club loan data.
 
 	Optionally, can specify which columns should be included in the 
 	dataframe by supplying a list of column names. """
@@ -48,7 +48,10 @@ class CleanLendingClubData:
 			if column in match_columns_to_clean_function:
 				clean_function = match_columns_to_clean_function[column]
 				loans_df[column] = loans_df[column].map(clean_function)
-		return loans_df
+
+        # Drop null rows
+		return loans_df.dropna()
 
 	def run(self):
 		return self._make_clean_dataframe()
+
